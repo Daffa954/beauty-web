@@ -5,28 +5,28 @@ export const UNIT_PRICE = 349000;
 export const PROTOTYPE_IMAGES: PrototypeImage[] = [
   {
     id: "angle-1",
-    src: "/assets/prototype%20produk%20lotion.jpg",
+    src: "/assets/prototype%20produk%20lotion.webp",
     title: "The Architectural Vessel",
     spec: "UV-Protective Ceramic Finish",
     caption: "Studio Front View // Isolated On Sculpted Stone",
   },
   {
     id: "angle-2",
-    src: "/assets/prototype%20produk%20lotion%202.jpg",
+    src: "/assets/prototype%20produk%20lotion%202.webp",
     title: "Hermetic Micro-Pump",
     spec: "Airless Piston Actuator",
     caption: "Nitrogen Purity Lock // Micro-Dose Dispenser",
   },
   {
     id: "angle-3",
-    src: "/assets/prototype%20produk%20lotion%203.jpg",
+    src: "/assets/prototype%20produk%20lotion%203.webp",
     title: "Whipped Micro-Emulsion",
     spec: "Sub-Micron Lipid Spheres",
     caption: "Formulation Nuance // Viscosity 5200 CPS",
   },
   {
     id: "angle-4",
-    src: "/assets/prototype%20produk%20lotion%204.jpg",
+    src: "/assets/prototype%20produk%20lotion%204.webp",
     title: "Curated Regimen Placement",
     spec: "Minimalist Tactile Sculpture",
     caption: "Vanity Still Life // Daily Skin Fitness Context",
