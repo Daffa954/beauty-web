@@ -29,50 +29,48 @@ export const CinemaSection: React.FC = () => {
       className="py-24 sm:py-36 bg-black text-white relative overflow-hidden border-b border-white/10"
     >
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12">
-        {/* Monumental Motto */}
-        <div className="text-center max-w-4xl mx-auto space-y-4 mb-16 sm:mb-24">
-          <span className="text-[10px] font-mono tracking-[0.35em] uppercase text-[#d08c81] block">
-            LATIN FORMULATION MAXIM
+        <div className="mx-auto mb-20 max-w-4xl text-center sm:mb-28">
+          <span className="mb-6 block text-[10px] font-mono uppercase tracking-[0.25em] text-[#d08c81] sm:mb-8">
+            Our Philosophy
           </span>
-          <h2 className="text-4xl sm:text-7xl md:text-8xl lg:text-[100px] font-medium tracking-tight uppercase leading-[0.85] [text-wrap:balance]">
-            SANITAS IN CORPORE VIVIDO
+          <h2 className="text-[clamp(2.5rem,10vw,6.25rem)] font-medium uppercase leading-[0.95] tracking-tight text-white">
+            <span className="block">Sanitas in</span>
+            <span className="block text-[#e8c5c1]">corpore vivido</span>
           </h2>
-          <p className="text-stone-400 text-sm sm:text-base font-light italic font-serif tracking-wide pt-2">
-            “For the resilient, no cutaneous barrier is fragile.”
-          </p>
+          <div className="mx-auto mt-8 h-px w-12 bg-[#d08c81]/70 sm:mt-10" />
         </div>
 
         {/* Cinema Theatre Header Bar */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4 border-b border-white/15 pb-4">
           <div className="space-y-1">
             <span className="text-[10px] font-mono tracking-[0.3em] uppercase text-white/50 block">
-              02 // MOTION CINEMA THEATRE
+              02 // IN MOTION
             </span>
             <h3 className="text-xl sm:text-2xl font-medium uppercase tracking-tight text-white">
-              The Living Formulation In Motion
+              The Formulation in Motion
             </h3>
           </div>
 
           {/* Reel Tabs */}
-          <div className="flex flex-wrap items-center gap-2 border border-white/20 p-1 rounded-[2px] bg-[#0c0c0c]">
+          <div className="grid w-full grid-cols-3 gap-1 border border-white/20 p-1 rounded-[2px] bg-[#0c0c0c] md:flex md:w-auto">
             {SENSORY_REELS.map((reel, idx) => (
               <button
                 key={reel.id}
                 onClick={() => handleSelectReel(idx)}
-                className={`rounded-[2px] px-3.5 sm:px-5 py-2 text-[10px] sm:text-[11px] font-mono tracking-widest uppercase transition-all cursor-pointer ${
+                className={`rounded-[2px] px-2 sm:px-5 py-3 text-[10px] sm:text-[11px] font-mono tracking-wider uppercase transition-all cursor-pointer ${
                   activeReelIndex === idx
                     ? "bg-white text-black font-semibold shadow-lg"
                     : "text-stone-400 hover:text-white"
                 }`}
               >
-                {reel.badge}
+                Film 0{idx + 1}
               </button>
             ))}
           </div>
         </div>
 
         {/* Main Cinema Screen */}
-        <div className="relative aspect-video w-full rounded-[2px] overflow-hidden border border-white/20 bg-neutral-950 shadow-2xl group">
+        <div className="relative aspect-[4/5] sm:aspect-video w-full rounded-[2px] overflow-hidden border border-white/20 bg-neutral-950 shadow-2xl group">
           <video
             ref={videoRef}
             key={currentReel.src}
@@ -83,15 +81,6 @@ export const CinemaSection: React.FC = () => {
             playsInline
             className="w-full h-full object-cover"
           />
-
-          {/* Corner Crosshairs & Telemetry */}
-          <div className="absolute top-4 left-4 z-20 text-[9px] font-mono tracking-widest uppercase text-white/80 bg-black/70 px-3 py-1 border border-white/15 rounded-[2px]">
-            {currentReel.badge} • {currentReel.telemetry}
-          </div>
-
-          <div className="absolute top-4 right-4 z-20 text-[9px] font-mono tracking-widest uppercase text-white/80 bg-black/70 px-3 py-1 border border-white/15 rounded-[2px]">
-            FORMAT // 16:9 NATIVE
-          </div>
 
           {/* Central Play/Pause Trigger */}
           <button
@@ -109,12 +98,9 @@ export const CinemaSection: React.FC = () => {
           {/* Bottom Screen Overlay */}
           <div className="absolute bottom-0 inset-x-0 p-4 sm:p-8 bg-gradient-to-t from-black via-black/60 to-transparent flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 z-20">
             <div className="space-y-1">
-              <h4 className="text-base sm:text-xl font-medium uppercase text-white tracking-tight">
+              <h4 className="text-lg sm:text-xl font-medium uppercase text-white tracking-tight">
                 {currentReel.title}
               </h4>
-              <p className="text-xs sm:text-sm text-stone-300 font-light max-w-xl">
-                {currentReel.subtitle}
-              </p>
             </div>
 
             {/* Playback Controls */}
@@ -142,50 +128,6 @@ export const CinemaSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Secondary Dual Telemetry Previews */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          {SENSORY_REELS.filter((_, idx) => idx !== activeReelIndex).map(
-            (subReel) => (
-              <div
-                key={subReel.id}
-                onClick={() => {
-                  const targetIdx = SENSORY_REELS.findIndex(
-                    (r) => r.id === subReel.id
-                  );
-                  if (targetIdx !== -1) handleSelectReel(targetIdx);
-                }}
-                className="border border-white/10 hover:border-[#d08c81]/60 p-4 rounded-[2px] bg-[#0c0c0c] flex items-center gap-4 cursor-pointer transition-all group"
-              >
-                <div className="relative aspect-video w-36 sm:w-48 rounded-[2px] overflow-hidden bg-black shrink-0 border border-white/10">
-                  <video
-                    src={subReel.src}
-                    muted
-                    loop
-                    playsInline
-                    autoPlay
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-transparent transition-colors" />
-                  <div className="absolute top-1.5 left-1.5 text-[8px] font-mono px-1.5 py-0.5 bg-black/80 text-white border border-white/10">
-                    {subReel.badge.split(" // ")[0]}
-                  </div>
-                </div>
-
-                <div className="space-y-1 min-w-0">
-                  <span className="text-[9px] font-mono text-[#d08c81] tracking-widest uppercase block">
-                    SWITCH REEL VIEW →
-                  </span>
-                  <h5 className="text-sm font-medium text-white truncate group-hover:text-[#e8c5c1] transition-colors">
-                    {subReel.title}
-                  </h5>
-                  <p className="text-[11px] text-stone-400 line-clamp-1 font-light">
-                    {subReel.subtitle}
-                  </p>
-                </div>
-              </div>
-            )
-          )}
-        </div>
       </div>
     </section>
   );

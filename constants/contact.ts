@@ -1,3 +1,3 @@
-export const WHATSAPP_NUMBER = "628113304555";
+export const WHATSAPP_NUMBER = "6289501224854";
 export const CONCIERGE_EMAIL = "concierge@beautylotion.com";
 

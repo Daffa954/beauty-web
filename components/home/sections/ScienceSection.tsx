@@ -25,7 +25,7 @@ export const ScienceSection: React.FC = () => {
             Active Ingredient Architecture
           </h2>
           <p className="text-neutral-600 text-xs sm:text-sm font-light leading-relaxed max-w-xl">
-            Four physiologically native actives calibrated for instantaneous dermal affinity with zero pore-clogging residue.
+            Four complementary actives for hydrated, comfortable skin.
           </p>
         </div>
 
@@ -55,25 +55,6 @@ export const ScienceSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Standards Banner */}
-        <div className="mt-8 border border-[#e5e5e5] p-6 bg-neutral-50 grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-xs font-mono">
-          <div>
-            <div className="text-black font-semibold">0% PARABENS</div>
-            <div className="text-[10px] text-neutral-500 uppercase mt-0.5">Zero Preservatives</div>
-          </div>
-          <div>
-            <div className="text-black font-semibold">0% FRAGRANCE</div>
-            <div className="text-[10px] text-neutral-500 uppercase mt-0.5">Non-Sensitizing</div>
-          </div>
-          <div>
-            <div className="text-black font-semibold">100% VEGAN</div>
-            <div className="text-[10px] text-neutral-500 uppercase mt-0.5">Cruelty-Free</div>
-          </div>
-          <div>
-            <div className="text-black font-semibold">DERM TESTED</div>
-            <div className="text-[10px] text-neutral-500 uppercase mt-0.5">Hypoallergenic</div>
-          </div>
-        </div>
       </div>
     </section>
   );

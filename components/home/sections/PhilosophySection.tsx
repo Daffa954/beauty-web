@@ -36,11 +36,8 @@ export const PhilosophySection: React.FC<PhilosophySectionProps> = ({
                 Formulation
               </h2>
               <p className="text-neutral-700 text-sm sm:text-base font-normal leading-[1.6]">
-                At a time when skincare is saturated with superficial silicones,
-                Beauty Lotion remains deliberately physiological. Its
-                bio-identical lipid complex, whipped micro-emulsion texture, and
-                airless preservation celebrate the synergy between skin and
-                cellular science.
+                A lightweight formula with bio-identical lipids, designed to
+                support the skin barrier and preserve hydration.
               </p>
               <div className="pt-2">
                 <button
@@ -61,10 +58,6 @@ export const PhilosophySection: React.FC<PhilosophySectionProps> = ({
                 fill
                 className="object-cover"
               />
-              <div className="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur-md p-2.5 text-[9px] font-mono tracking-widest uppercase text-black border border-[#e5e5e5] flex justify-between">
-                <span>DISPENSER DETAIL</span>
-                <span>0% CONTAMINATION</span>
-              </div>
             </div>
           </div>
 
@@ -79,9 +72,6 @@ export const PhilosophySection: React.FC<PhilosophySectionProps> = ({
                 className="object-cover"
                 priority
               />
-              <div className="absolute top-4 left-4 bg-white/95 px-3 py-1 rounded-[2px] text-[9px] font-mono tracking-widest uppercase text-black border border-[#e5e5e5]">
-                FLACON DESIGN // 150 ML STUDIO FRONT
-              </div>
             </div>
 
             {/* 3 Pillars in Clean Hairline Split Grid */}
