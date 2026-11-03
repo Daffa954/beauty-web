@@ -29,7 +29,7 @@ export const NavDrawer: React.FC<NavDrawerProps> = ({
   return (
     <div className="fixed inset-0 z-50 bg-white text-black flex flex-col justify-between animate-fadeIn overflow-y-auto">
       {/* Top Bar of Drawer */}
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 h-20 sm:h-24 grid grid-cols-[1fr_auto_1fr] items-center border-b border-[#e5e5e5]">
+      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 h-20 sm:h-24 grid grid-cols-[auto_minmax(0,1fr)_auto] gap-2 items-center border-b border-[#e5e5e5]">
         <button
           onClick={onClose}
           className="flex items-center gap-2 p-2 -ml-2 text-black hover:opacity-60 transition-opacity cursor-pointer"
@@ -41,7 +41,7 @@ export const NavDrawer: React.FC<NavDrawerProps> = ({
           </span>
         </button>
 
-        <div className="text-center font-sans text-xl sm:text-2xl font-medium tracking-[0.35em] uppercase text-black">
+        <div className="text-center font-sans text-sm min-[400px]:text-base sm:text-2xl font-medium tracking-[0.12em] sm:tracking-[0.35em] whitespace-nowrap uppercase text-black">
           BEAUTY LOTION
         </div>
 
@@ -51,9 +51,9 @@ export const NavDrawer: React.FC<NavDrawerProps> = ({
               onClose();
               onOpenOrder();
             }}
-            className="rounded-[2px] bg-black text-white px-5 py-2 text-xs tracking-widest uppercase font-medium hover:bg-neutral-800 cursor-pointer"
+            className="rounded-[2px] bg-black text-white px-2 sm:px-5 py-2 text-[10px] sm:text-xs tracking-widest uppercase font-medium hover:bg-neutral-800 cursor-pointer"
           >
-            Acquire ({formatCurrency(UNIT_PRICE)})
+            Acquire <span className="hidden sm:inline">({formatCurrency(UNIT_PRICE)})</span>
           </button>
         </div>
       </div>
@@ -96,7 +96,7 @@ export const NavDrawer: React.FC<NavDrawerProps> = ({
       </div>
 
       {/* Bottom Tabular Metadata Strip */}
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 py-6 border-t border-[#e5e5e5] grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-mono text-neutral-500">
+      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 py-6 border-t border-[#e5e5e5] grid grid-cols-1 min-[400px]:grid-cols-2 md:grid-cols-4 gap-4 text-xs font-mono text-neutral-500">
         <div>
           <span className="text-black uppercase block font-semibold mb-1">Direct Advisory</span>
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-black">

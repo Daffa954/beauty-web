@@ -127,7 +127,7 @@ export const ConciergeSection = forwardRef<HTMLTextAreaElement, ConciergeSection
                     <Check className="w-6 h-6" />
                   </div>
                   <h4 className="text-base font-medium text-white uppercase tracking-wider font-mono">
-                    Transmission Received
+                    Email Draft Opened
                   </h4>
                   <p className="text-xs text-stone-300 font-light leading-relaxed">
                     Thank you. A dedicated Beauty Lotion advisor has logged your
@@ -200,7 +200,7 @@ export const ConciergeSection = forwardRef<HTMLTextAreaElement, ConciergeSection
                     className="w-full rounded-[2px] bg-white text-black hover:bg-stone-200 font-semibold py-4 text-xs tracking-[0.25em] uppercase transition-all flex items-center justify-center gap-2 cursor-pointer pt-3 shadow-lg disabled:opacity-50"
                   >
                     <span>
-                      {isSubmitting ? "Transmitting..." : "Transmit To Advisory Desk"}
+                      {isSubmitting ? "Transmitting..." : "Prepare Email"}
                     </span>
                     <ArrowRight className="w-4 h-4" />
                   </button>

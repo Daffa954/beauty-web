@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { conciergeService } from "@/service/conciergeService";
+import { CONCIERGE_EMAIL } from "@/constants/contact";
 
 export function useConcierge() {
   const [clientName, setClientName] = useState("");
   const [clientContact, setClientContact] = useState("");
   const [clientMessage, setClientMessage] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const isSubmitting = false;
   const [inquirySent, setInquirySent] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
@@ -13,28 +13,10 @@ export function useConcierge() {
     e.preventDefault();
     if (!clientName.trim() || !clientContact.trim()) return;
 
-    setIsSubmitting(true);
-    setErrorMessage(null);
-
-    try {
-      const response = await conciergeService.submitInquiry({
-        name: clientName,
-        contact: clientContact,
-        message: clientMessage,
-      });
-
-      if (response.success) {
-        setInquirySent(true);
-      }
-    } catch (err: unknown) {
-      if (err instanceof Error) {
-        setErrorMessage(err.message);
-      } else {
-        setErrorMessage("Terjadi kesalahan saat mengirim transmisi.");
-      }
-    } finally {
-      setIsSubmitting(false);
-    }
+    const subject = encodeURIComponent("Beauty Lotion inquiry");
+    const body = encodeURIComponent(`Name: ${clientName}\nContact: ${clientContact}\n\nInquiry: ${clientMessage}`);
+    window.location.href = `mailto:${CONCIERGE_EMAIL}?subject=${subject}&body=${body}`;
+    setInquirySent(true);
   };
 
   const resetForm = () => {

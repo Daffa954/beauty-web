@@ -26,8 +26,8 @@ export const OrderModal: React.FC<OrderModalProps> = ({
   const whatsappOrderUrl = getOrderWhatsAppUrl(quantity, unitPrice);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
-      <div className="bg-[#0e0e0e] text-white w-full max-w-lg rounded-[2px] p-6 sm:p-8 border border-white/20 shadow-2xl relative space-y-6">
+    <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center overflow-y-auto p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
+      <div className="bg-[#0e0e0e] text-white w-full max-w-lg rounded-[2px] p-6 sm:p-8 border border-white/20 shadow-2xl relative space-y-6 my-auto">
         <button
           onClick={onClose}
           className="absolute top-5 right-5 p-2 rounded-[2px] bg-white/10 hover:bg-white/20 text-stone-300 hover:text-white transition-all cursor-pointer"
@@ -36,7 +36,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
           <X className="w-5 h-5" />
         </button>
 
-        <div className="space-y-1">
+        <div className="space-y-1 pr-10">
           <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-[#d08c81] block">
             DIRECT ALLOCATION DESK
           </span>
