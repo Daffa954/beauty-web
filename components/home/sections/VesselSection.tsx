@@ -2,17 +2,14 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, ShoppingBag } from "lucide-react";
-import { PROTOTYPE_IMAGES, UNIT_PRICE } from "@/constants/product";
-import { formatCurrency } from "@/utils/formatters";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { PROTOTYPE_IMAGES } from "@/constants/product";
 
 interface VesselSectionProps {
-  onOpenOrder: () => void;
   onInquire: (e: React.MouseEvent) => void;
 }
 
 export const VesselSection: React.FC<VesselSectionProps> = ({
-  onOpenOrder,
   onInquire,
 }) => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -111,7 +108,7 @@ export const VesselSection: React.FC<VesselSectionProps> = ({
             </div>
           </div>
 
-          {/* Specifications & Acquisition (Right 5 Columns) */}
+          {/* Specifications (Right 5 Columns) */}
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-3">
               <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-neutral-400 block">
@@ -145,44 +142,14 @@ export const VesselSection: React.FC<VesselSectionProps> = ({
                 <span className="text-neutral-500 uppercase">Certification</span>
                 <span className="text-black font-medium">100% Vegan • Cruelty-Free</span>
               </div>
-              <div className="p-3.5 flex justify-between">
-                <span className="text-neutral-500 uppercase">Allocation Status</span>
-                <span className="text-emerald-700 font-semibold">Allocated Batch 01</span>
-              </div>
             </div>
 
-            {/* Acquisition Box */}
-            <div className="border border-[#e5e5e5] bg-white p-6 rounded-[2px] space-y-4 shadow-sm">
-              <div className="flex items-baseline justify-between">
-                <div>
-                  <span className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest block">
-                    OFFICIAL OFFERING
-                  </span>
-                  <span className="text-2xl sm:text-3xl font-mono font-medium text-black">
-                    {formatCurrency(UNIT_PRICE)}
-                  </span>
-                </div>
-                <span className="text-[10px] font-mono text-emerald-800 bg-emerald-50 tracking-wider uppercase border border-emerald-200 px-2.5 py-1">
-                  READY TO DISPATCH
-                </span>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <button
-                  onClick={onOpenOrder}
-                  className="flex-1 rounded-[2px] bg-black text-white hover:bg-neutral-800 text-xs tracking-[0.2em] uppercase font-semibold py-3.5 px-6 text-center transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
-                >
-                  <ShoppingBag className="w-4 h-4" />
-                  <span>Acquire Vessel</span>
-                </button>
-                <button
-                  onClick={onInquire}
-                  className="rounded-[2px] border border-neutral-300 hover:border-black text-black text-xs tracking-[0.2em] uppercase font-medium py-3.5 px-6 text-center transition-all cursor-pointer"
-                >
-                  Inquire
-                </button>
-              </div>
-            </div>
+            <button
+              onClick={onInquire}
+              className="rounded-[2px] border border-neutral-300 hover:border-black text-black text-xs tracking-[0.2em] uppercase font-medium py-3.5 px-6 text-center transition-all cursor-pointer"
+            >
+              Inquire
+            </button>
           </div>
         </div>
       </div>

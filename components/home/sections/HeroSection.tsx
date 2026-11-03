@@ -1,17 +1,13 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { ArrowRight, ShoppingBag } from "lucide-react";
-import { formatCurrency } from "@/utils/formatters";
-import { UNIT_PRICE } from "@/constants/product";
+import { ArrowRight } from "lucide-react";
 
 interface HeroSectionProps {
-  onOpenOrder: () => void;
   onNavigate: (e: React.MouseEvent, id: string) => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
-  onOpenOrder,
   onNavigate,
 }) => {
   const [isHeroMuted] = useState(true);
@@ -61,13 +57,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <span>Experience In Motion</span>
               <ArrowRight className="w-4 h-4" />
             </a>
-            <button
-              onClick={onOpenOrder}
-              className="rounded-[2px] bg-black/60 hover:bg-white/10 text-white backdrop-blur-md border border-white/25 text-xs tracking-[0.25em] uppercase font-medium px-8 py-3.5 sm:py-4 transition-all text-center flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <ShoppingBag className="w-4 h-4 text-[#e8c5c1]" />
-              <span>Acquire Bottle ({formatCurrency(UNIT_PRICE)})</span>
-            </button>
           </div>
         </div>
 

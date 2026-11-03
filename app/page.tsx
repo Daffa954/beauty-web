@@ -10,7 +10,6 @@ import { CinemaSection } from "@/components/home/sections/CinemaSection";
 import { VesselSection } from "@/components/home/sections/VesselSection";
 import { ScienceSection } from "@/components/home/sections/ScienceSection";
 import { ConciergeSection } from "@/components/home/sections/ConciergeSection";
-import { OrderModal } from "@/components/home/modals/OrderModal";
 import { JournalModal } from "@/components/home/modals/JournalModal";
 import { PrivacyModal } from "@/components/home/modals/PrivacyModal";
 import { useScrollTo } from "@/hooks/useScrollTo";
@@ -22,7 +21,6 @@ export default function LuxuryResponsiveLanding() {
   const [isNavDrawerOpen, setIsNavDrawerOpen] = useState(false);
 
   // Modals state
-  const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
   const [isJournalModalOpen, setIsJournalModalOpen] = useState(false);
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
 
@@ -48,7 +46,6 @@ export default function LuxuryResponsiveLanding() {
       {/* 1. Header Navigation */}
       <Header
         onOpenMenu={() => setIsNavDrawerOpen(true)}
-        onOpenOrder={() => setIsOrderModalOpen(true)}
         onNavigate={handleNavigate}
       />
 
@@ -56,13 +53,11 @@ export default function LuxuryResponsiveLanding() {
       <NavDrawer
         isOpen={isNavDrawerOpen}
         onClose={() => setIsNavDrawerOpen(false)}
-        onOpenOrder={() => setIsOrderModalOpen(true)}
         onNavigate={handleNavigate}
       />
 
       {/* 3. Hero Section */}
       <HeroSection
-        onOpenOrder={() => setIsOrderModalOpen(true)}
         onNavigate={handleNavigate}
       />
 
@@ -72,9 +67,8 @@ export default function LuxuryResponsiveLanding() {
       {/* 5. Motion Cinema Theatre */}
       <CinemaSection />
 
-      {/* 6. The Vessel Specification & Acquisition */}
+      {/* 6. The Vessel Specification */}
       <VesselSection
-        onOpenOrder={() => setIsOrderModalOpen(true)}
         onInquire={handleDirectInquiry}
       />
 
@@ -92,11 +86,6 @@ export default function LuxuryResponsiveLanding() {
       />
 
       {/* ================= MODALS ================= */}
-      <OrderModal
-        isOpen={isOrderModalOpen}
-        onClose={() => setIsOrderModalOpen(false)}
-        onInquireEmail={handleDirectInquiry}
-      />
 
       <JournalModal
         isOpen={isJournalModalOpen}

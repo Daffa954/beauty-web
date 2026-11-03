@@ -4,22 +4,19 @@ import React from "react";
 import Image from "next/image";
 import { X } from "lucide-react";
 import { NAV_ITEMS } from "@/constants/navigation";
-import { UNIT_PRICE } from "@/constants/product";
 import { WHATSAPP_NUMBER, CONCIERGE_EMAIL } from "@/constants/contact";
-import { formatCurrency, formatPhoneNumber } from "@/utils/formatters";
+import { formatPhoneNumber } from "@/utils/formatters";
 import { getGeneralWhatsAppUrl } from "@/utils/whatsapp";
 
 interface NavDrawerProps {
   isOpen: boolean;
   onClose: () => void;
-  onOpenOrder: () => void;
   onNavigate: (e: React.MouseEvent, id: string) => void;
 }
 
 export const NavDrawer: React.FC<NavDrawerProps> = ({
   isOpen,
   onClose,
-  onOpenOrder,
   onNavigate,
 }) => {
   if (!isOpen) return null;
@@ -45,17 +42,7 @@ export const NavDrawer: React.FC<NavDrawerProps> = ({
           BEAUTY LOTION
         </div>
 
-        <div className="flex justify-end">
-          <button
-            onClick={() => {
-              onClose();
-              onOpenOrder();
-            }}
-            className="rounded-[2px] bg-black text-white px-2 sm:px-5 py-2 text-[10px] sm:text-xs tracking-widest uppercase font-medium hover:bg-neutral-800 cursor-pointer"
-          >
-            Acquire <span className="hidden sm:inline">({formatCurrency(UNIT_PRICE)})</span>
-          </button>
-        </div>
+        <div aria-hidden="true" />
       </div>
 
       {/* 50/50 Architectural Body */}
