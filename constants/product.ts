@@ -36,7 +36,7 @@ export const PROTOTYPE_IMAGES: PrototypeImage[] = [
 export const SENSORY_REELS: SensoryReel[] = [
   {
     id: "reel-1",
-    title: "Formulation Craft & Whipped Texture",
+    title: "Texture",
     subtitle: "High-density micro-emulsion presented in glass flacon under controlled studio illumination.",
     src: "/assets/video%20body%202.mp4",
     badge: "REEL 01 // 4K UHD",
@@ -45,7 +45,7 @@ export const SENSORY_REELS: SensoryReel[] = [
   },
   {
     id: "reel-2",
-    title: "Epidermal Contact & Assimilation",
+    title: "Application",
     subtitle: "Direct skin application demonstrating rapid sub-micron absorption with zero surface tackiness.",
     src: "/assets/video%20body%203.mp4",
     badge: "REEL 02 // HD MOTION",
@@ -54,7 +54,7 @@ export const SENSORY_REELS: SensoryReel[] = [
   },
   {
     id: "reel-3",
-    title: "Atmospheric Essence & Fluidity",
+    title: "Essence",
     subtitle: "The tactile and sensory motion of Beauty Lotion conditioning the living cutaneous mantle.",
     src: "/assets/video%20body.mp4",
     badge: "REEL 03 // AMBIENT",

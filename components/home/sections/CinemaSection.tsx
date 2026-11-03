@@ -44,26 +44,28 @@ export const CinemaSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4 border-b border-white/15 pb-4">
           <div className="space-y-1">
             <span className="text-[10px] font-mono tracking-[0.3em] uppercase text-white/50 block">
-              02 // IN MOTION
+              02 // FILMS
             </span>
             <h3 className="text-xl sm:text-2xl font-medium uppercase tracking-tight text-white">
-              The Formulation in Motion
+              In Motion
             </h3>
           </div>
 
           {/* Reel Tabs */}
-          <div className="grid w-full grid-cols-3 gap-1 border border-white/20 p-1 rounded-[2px] bg-[#0c0c0c] md:flex md:w-auto">
+          <div aria-label="Choose a film"
+            className="flex w-full items-center border-b border-white/15 md:w-auto md:gap-1 md:rounded-[2px] md:border md:border-white/20 md:bg-[#0c0c0c] md:p-1">
             {SENSORY_REELS.map((reel, idx) => (
               <button
                 key={reel.id}
                 onClick={() => handleSelectReel(idx)}
-                className={`rounded-[2px] px-2 sm:px-5 py-3 text-[10px] sm:text-[11px] font-mono tracking-wider uppercase transition-all cursor-pointer ${
+                aria-pressed={activeReelIndex === idx}
+                className={`min-w-0 flex-1 whitespace-nowrap px-1 py-3 text-center text-[10px] font-mono uppercase tracking-wide transition-all cursor-pointer md:flex-none md:rounded-[2px] md:px-5 md:text-[11px] md:tracking-wider ${
                   activeReelIndex === idx
-                    ? "bg-white text-black font-semibold shadow-lg"
-                    : "text-stone-400 hover:text-white"
+                    ? "border-b border-[#d08c81] text-white md:border-0 md:bg-white md:text-black md:font-semibold"
+                    : "border-b border-transparent text-stone-400 hover:text-white md:border-0"
                 }`}
               >
-                Film 0{idx + 1}
+                {reel.title}
               </button>
             ))}
           </div>
@@ -107,14 +109,16 @@ export const CinemaSection: React.FC = () => {
             <div className="flex items-center gap-3 shrink-0">
               <button
                 onClick={togglePlay}
+                aria-label={isPlaying ? "Pause video" : "Play video"}
                 className="rounded-[2px] px-3.5 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-[10px] font-mono tracking-widest uppercase transition-all flex items-center gap-1.5 cursor-pointer"
               >
                 {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
-                <span>{isPlaying ? "PAUSE" : "PLAY"}</span>
+                <span className="hidden sm:inline">{isPlaying ? "PAUSE" : "PLAY"}</span>
               </button>
 
               <button
                 onClick={toggleMute}
+                aria-label={isMuted ? "Unmute video" : "Mute video"}
                 className="rounded-[2px] px-3.5 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-[10px] font-mono tracking-widest uppercase transition-all flex items-center gap-1.5 cursor-pointer"
               >
                 {isMuted ? (
@@ -122,7 +126,7 @@ export const CinemaSection: React.FC = () => {
                 ) : (
                   <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
                 )}
-                <span>{isMuted ? "UNMUTE" : "MUTED"}</span>
+                <span className="hidden sm:inline">{isMuted ? "UNMUTE" : "MUTE"}</span>
               </button>
             </div>
           </div>
