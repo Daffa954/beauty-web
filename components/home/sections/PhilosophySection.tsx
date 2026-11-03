@@ -53,7 +53,7 @@ export const PhilosophySection: React.FC<PhilosophySectionProps> = ({
             {/* Staggered Offset Card: Flacon Detail */}
             <div className="relative aspect-[3/4] w-full max-w-[380px] bg-neutral-100 rounded-[2px] overflow-hidden border border-[#e5e5e5]">
               <Image
-                src="/assets/prototype%20produk%20lotion%202.jpg"
+                src="/assets/prototype%20produk%20lotion%202.webp"
                 alt="Hermetic Dispenser Precision"
                 fill
                 className="object-cover"
@@ -66,7 +66,7 @@ export const PhilosophySection: React.FC<PhilosophySectionProps> = ({
             {/* High-Anchored Horizontal Visual Card */}
             <div className="relative aspect-[16/10] w-full bg-neutral-100 rounded-[2px] overflow-hidden border border-[#e5e5e5]">
               <Image
-                src="/assets/prototype%20produk%20lotion.jpg"
+                src="/assets/prototype%20produk%20lotion.webp"
                 alt="Beauty Lotion Studio Prototype"
                 fill
                 className="object-cover"

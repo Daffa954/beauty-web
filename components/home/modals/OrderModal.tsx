@@ -53,7 +53,7 @@ export const OrderModal: React.FC<OrderModalProps> = ({
           <div className="flex items-center gap-3.5">
             <div className="relative w-14 h-14 rounded-[2px] bg-black overflow-hidden shrink-0 border border-white/15">
               <Image
-                src="/assets/prototype%20produk%20lotion.jpg"
+                src="/assets/prototype%20produk%20lotion.webp"
                 alt="Beauty Lotion"
                 fill
                 className="object-contain p-1"

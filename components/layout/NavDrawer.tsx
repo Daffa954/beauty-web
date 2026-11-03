@@ -69,7 +69,7 @@ export const NavDrawer: React.FC<NavDrawerProps> = ({
         {/* Right Column: Macro Craftsmanship Editorial Photo */}
         <div className="hidden lg:block lg:col-span-5 relative aspect-[4/5] w-full rounded-[2px] overflow-hidden bg-neutral-100 border border-[#e5e5e5]">
           <Image
-            src="/assets/prototype%20produk%20lotion%203.jpg"
+            src="/assets/prototype%20produk%20lotion%203.webp"
             alt="Beauty Lotion Craftsmanship"
             fill
             className="object-cover"
