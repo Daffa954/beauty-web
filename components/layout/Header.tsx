@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { MessageCircle } from "lucide-react";
 
 interface HeaderProps {
   onOpenMenu: () => void;
@@ -14,7 +13,7 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <header className="relative w-full bg-[#070707] border-b border-white/10 text-white z-30 transition-all">
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 h-20 sm:h-24 grid grid-cols-[auto_minmax(0,1fr)_auto] gap-2 items-center">
+      <div className="relative w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 h-20 sm:h-24 flex items-center">
         {/* Left: Menu Trigger */}
         <div className="flex items-center justify-start">
           <button
@@ -33,7 +32,7 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Center: Brand Title */}
-        <div className="flex items-center justify-center">
+        <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
           <a
             href="#top"
             onClick={(e) => onNavigate(e, "top")}
@@ -46,17 +45,6 @@ export const Header: React.FC<HeaderProps> = ({
           </a>
         </div>
 
-        {/* Right: Contact */}
-        <div className="flex items-center justify-end space-x-2 sm:space-x-3">
-          <a
-            href="#concierge"
-            onClick={(e) => onNavigate(e, "concierge")}
-            className="hidden sm:flex rounded-[2px] border border-white/25 hover:border-white text-white text-[10px] sm:text-[11px] tracking-[0.2em] uppercase font-medium px-4 py-2.5 transition-all items-center gap-1.5 bg-white/5 whitespace-nowrap cursor-pointer hover:bg-white/10"
-          >
-            <MessageCircle className="w-3.5 h-3.5 text-[#d08c81]" />
-            <span>Contact</span>
-          </a>
-        </div>
       </div>
     </header>
   );
