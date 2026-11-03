@@ -26,23 +26,23 @@ export const NavDrawer: React.FC<NavDrawerProps> = ({
   return (
     <div className="fixed inset-0 z-50 bg-white text-black flex flex-col justify-between animate-fadeIn overflow-y-auto">
       {/* Top Bar of Drawer */}
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 h-20 sm:h-24 grid grid-cols-[auto_minmax(0,1fr)_auto] gap-2 items-center border-b border-[#e5e5e5]">
-        <button
-          onClick={onClose}
-          className="flex items-center gap-2 p-2 -ml-2 text-black hover:opacity-60 transition-opacity cursor-pointer"
-          aria-label="Close Navigation"
-        >
-          <X className="w-6 h-6 stroke-[1.5]" />
-          <span className="font-mono text-[11px] tracking-[0.25em] uppercase hidden sm:inline">
-            Close
-          </span>
-        </button>
+      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 h-20 sm:h-24 grid grid-cols-[1fr_auto_1fr] gap-2 items-center border-b border-[#e5e5e5]">
+        <div aria-hidden="true" />
 
         <div className="text-center font-sans text-sm min-[400px]:text-base sm:text-2xl font-medium tracking-[0.12em] sm:tracking-[0.35em] whitespace-nowrap uppercase text-black">
           BEAUTY LOTION
         </div>
 
-        <div aria-hidden="true" />
+        <button
+          onClick={onClose}
+          className="flex items-center justify-end gap-2 p-2 -mr-2 text-black hover:opacity-60 transition-opacity cursor-pointer"
+          aria-label="Close Navigation"
+        >
+          <span className="font-mono text-[11px] tracking-[0.25em] uppercase hidden sm:inline">
+            Close
+          </span>
+          <X className="w-6 h-6 stroke-[1.5]" />
+        </button>
       </div>
 
       {/* 50/50 Architectural Body */}

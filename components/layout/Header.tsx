@@ -12,22 +12,22 @@ export const Header: React.FC<HeaderProps> = ({
   onNavigate,
 }) => {
   return (
-    <header className="relative w-full bg-[#070707] border-b border-white/10 text-white z-30 transition-all">
-      <div className="relative w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 h-20 sm:h-24 flex items-center">
-        {/* Left: Menu Trigger */}
-        <div className="flex items-center justify-start">
+    <header className="absolute inset-x-0 top-0 z-30 bg-gradient-to-b from-black/80 via-black/40 to-transparent text-white">
+      <div className="relative w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 h-20 sm:h-24 flex items-center justify-end">
+        {/* Right: Menu Trigger */}
+        <div className="relative z-10 flex items-center justify-end">
           <button
             onClick={onOpenMenu}
-            className="flex items-center gap-3 group cursor-pointer p-2 -ml-2 text-white hover:text-[#d08c81] transition-colors"
+            className="flex items-center gap-3 group cursor-pointer p-2 -mr-2 text-white hover:text-[#d08c81] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             aria-label="Open Navigation Menu"
           >
+            <span className="hidden sm:inline font-mono text-[11px] tracking-[0.25em] uppercase text-white/90 group-hover:text-white">
+              Menu
+            </span>
             <div className="w-6 flex flex-col justify-center space-y-1.5">
               <span className="block h-[1.5px] w-6 bg-white group-hover:bg-[#d08c81] transition-transform group-hover:translate-x-1" />
               <span className="block h-[1.5px] w-4 bg-white group-hover:bg-[#d08c81] transition-all group-hover:w-6" />
             </div>
-            <span className="hidden sm:inline font-mono text-[11px] tracking-[0.25em] uppercase text-white/90 group-hover:text-white">
-              Menu
-            </span>
           </button>
         </div>
 

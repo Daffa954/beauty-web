@@ -14,7 +14,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const heroVideoRef = useRef<HTMLVideoElement | null>(null);
 
   return (
-    <section className="relative min-h-screen flex items-end justify-start overflow-hidden bg-black pb-14 sm:pb-20">
+    <section className="relative min-h-screen flex items-end justify-start overflow-hidden bg-black pt-32 pb-14 sm:pt-36 sm:pb-20">
       {/* Full-bleed 100vw Video Canvas */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
         <video
